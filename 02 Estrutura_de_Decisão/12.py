@@ -11,3 +11,30 @@
     Salário Bruto acima de 2500 - desconto de 20% Imprima na tela as informações, dispostas conforme o exemplo abaixo.
     No exemplo o valor da hora é 5 e a quantidade de hora é 220.
 """
+hora_trabalhada = int(input('Horas trabalhadas: '))
+valor_hora = float(input('Valor da hora de trabalho: R$'))
+salario_bruto = valor_hora * hora_trabalhada
+sindicato = salario_bruto * .03
+fgts = salario_bruto * .11
+imposto_renda = float()
+if salario_bruto <= 900:
+    imposto_renda = 0
+    val = 'Isento'
+elif salario_bruto <= 1500:
+    imposto_renda = salario_bruto * .05
+    val = 5
+elif salario_bruto <= 2500:
+    imposto_renda = salario_bruto * .1
+    val = 10
+else:
+    imposto_renda = salario_bruto * .2
+    val = 20
+salario_liquido = salario_bruto - (imposto_renda + sindicato)
+
+print(f"""
+       Salário bruto: ({hora_trabalhada} * R${valor_hora:.2f}) : R$ {salario_bruto:.2f}
+       (-) IR ({val}%)                   : R$ {imposto_renda:.2f}
+       (-) Sindicato (3%)            : R$ {sindicato:.2f}
+       Total de descontos            : R$ {sindicato + imposto_renda:.2f}
+       Salário Liquido               : R$ {salario_liquido:.2f}
+       """)
