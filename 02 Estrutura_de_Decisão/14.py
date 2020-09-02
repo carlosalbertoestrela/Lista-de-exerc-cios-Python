@@ -16,4 +16,10 @@ elif 4 <= media < 6:
     conceito = 'D'
 elif 0 <= media < 4:
     conceito = 'E'
-print(f'Com média {media:.1f} conceito atual do aluno é "{conceito}"!')
+if conceito in "ABC":
+    situacao = "APROVADO"
+else:
+    situacao = "REPROVADO"
+
+print(f'{"Resumo do aluno":-^25}')
+print(f'  Notas: {nota1} e {nota2}\n  Média: {media}\n  Situação: {situacao}\n  Conceito: {conceito}')
