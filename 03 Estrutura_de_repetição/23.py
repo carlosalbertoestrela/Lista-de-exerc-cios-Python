@@ -3,5 +3,3 @@
   O programa deverá mostrar também o número de divisões que ele executou para encontrar os números primos.
  Serão avaliados o funcionamento, o estilo e o número de testes (divisões) executados.
 """
-num = int(input('Digite um número para referencia: '))
-primo = True
